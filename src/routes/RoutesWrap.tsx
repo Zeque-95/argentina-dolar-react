@@ -6,6 +6,7 @@ export const RoutesWrap: React.FC = () => {
   return (
     <>
       <Router>
+        
         <Route component={Routes} />
       </Router>
     </>
