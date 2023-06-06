@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/dolar-argentina/static/js/main.a9bbdd24.chunk.js",
-    "main.js.map": "/dolar-argentina/static/js/main.a9bbdd24.chunk.js.map",
-    "runtime-main.js": "/dolar-argentina/static/js/runtime-main.841d4d2e.js",
-    "runtime-main.js.map": "/dolar-argentina/static/js/runtime-main.841d4d2e.js.map",
-    "static/js/2.70563675.chunk.js": "/dolar-argentina/static/js/2.70563675.chunk.js",
-    "static/js/2.70563675.chunk.js.map": "/dolar-argentina/static/js/2.70563675.chunk.js.map",
-    "index.html": "/dolar-argentina/index.html",
-    "precache-manifest.6aaf8bf3df878a9dc17265864c20de3d.js": "/dolar-argentina/precache-manifest.6aaf8bf3df878a9dc17265864c20de3d.js",
-    "service-worker.js": "/dolar-argentina/service-worker.js",
-    "static/js/2.70563675.chunk.js.LICENSE.txt": "/dolar-argentina/static/js/2.70563675.chunk.js.LICENSE.txt",
-    "static/js/main.a9bbdd24.chunk.js.LICENSE.txt": "/dolar-argentina/static/js/main.a9bbdd24.chunk.js.LICENSE.txt"
+    "main.js": "/dolar-argentina-react/static/js/main.b1348277.chunk.js",
+    "main.js.map": "/dolar-argentina-react/static/js/main.b1348277.chunk.js.map",
+    "runtime-main.js": "/dolar-argentina-react/static/js/runtime-main.7cd05e9f.js",
+    "runtime-main.js.map": "/dolar-argentina-react/static/js/runtime-main.7cd05e9f.js.map",
+    "static/js/2.70563675.chunk.js": "/dolar-argentina-react/static/js/2.70563675.chunk.js",
+    "static/js/2.70563675.chunk.js.map": "/dolar-argentina-react/static/js/2.70563675.chunk.js.map",
+    "index.html": "/dolar-argentina-react/index.html",
+    "precache-manifest.4f717d833acdd8ded78534120e05b727.js": "/dolar-argentina-react/precache-manifest.4f717d833acdd8ded78534120e05b727.js",
+    "service-worker.js": "/dolar-argentina-react/service-worker.js",
+    "static/js/2.70563675.chunk.js.LICENSE.txt": "/dolar-argentina-react/static/js/2.70563675.chunk.js.LICENSE.txt",
+    "static/js/main.b1348277.chunk.js.LICENSE.txt": "/dolar-argentina-react/static/js/main.b1348277.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.841d4d2e.js",
+    "static/js/runtime-main.7cd05e9f.js",
     "static/js/2.70563675.chunk.js",
-    "static/js/main.a9bbdd24.chunk.js"
+    "static/js/main.b1348277.chunk.js"
   ]
 }
