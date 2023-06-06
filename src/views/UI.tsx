@@ -3,6 +3,7 @@ import { ArgentinaDolarService } from "../services/ArgentinaDolarService";
 import { dolar } from "../domain/dolar";
 import { DolarComponent } from "../components/DolarComponent";
 import { Backdrop, CircularProgress } from "@material-ui/core";
+import { Typography } from "../components/Typography";
 
 export const UI: React.FC = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -30,10 +31,14 @@ export const UI: React.FC = () => {
 
   return (
     <>
+    <div style={{textAlign: "center"}}>
+    <Typography>Precio del Dólar HOY en Argentina</Typography>
+    </div>
+    <div style={{display: "flex", flexWrap: "wrap"}}>
       {dolars.map((value, index) => {
         return <DolarComponent dolar={value} key={index} />;
       })}
-      ;
+      </div>
     </>
   );
 };

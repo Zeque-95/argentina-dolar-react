@@ -1,9 +1,6 @@
 import * as React from "react";
 import { dolar } from "../domain/dolar";
-import { Button, Container } from "@material-ui/core";
-
-
-
+import { Button, Container, Grid } from "@material-ui/core";
 
 interface DolarComponentProps {
   dolar: dolar;
@@ -11,13 +8,13 @@ interface DolarComponentProps {
 export const DolarComponent: React.FC<DolarComponentProps> = (props) => {
   return (
     <>
-    <Container maxWidth="xs">
-      <div style={{ margin: "20px"}}>{props.dolar.name}
-      <p>{props.dolar.sale}</p>
-      <p>{props.dolar.variation}</p>
-      <Button variant="contained"> boton </Button>
+      <div style={{minWidth: "200px"}}>
+        <div style={{ backgroundColor: "blue"}}>
+          <p style={{fontSize: "26px"}}>{props.dolar.name}</p>
+          <p>{props.dolar.sale}</p>
+          <p>{props.dolar.variation}</p>
+        </div>
       </div>
-      </Container>
     </>
   );
 };
