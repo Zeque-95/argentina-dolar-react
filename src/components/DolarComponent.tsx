@@ -1,6 +1,5 @@
 import * as React from "react";
 import { dolar } from "../domain/dolar";
-import { Button, Container, Grid } from "@material-ui/core";
 
 interface DolarComponentProps {
   dolar: dolar;

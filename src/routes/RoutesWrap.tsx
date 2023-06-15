@@ -4,11 +4,8 @@ import { MemoryRouter as Router, Route } from "react-router-dom";
 
 export const RoutesWrap: React.FC = () => {
   return (
-    <>
-      <Router>
-        
-        <Route component={Routes} />
-      </Router>
-    </>
+    <Router>
+      <Route component={Routes} />
+    </Router>
   );
 };

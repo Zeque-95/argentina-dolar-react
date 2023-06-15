@@ -8,7 +8,6 @@ export class ArgentinaDolarService {
      return Axios.get<dolar[]>("/main/")
      .then((response) => {
        const { data } = response;
-       console.log(data);
        return data;
      })
     

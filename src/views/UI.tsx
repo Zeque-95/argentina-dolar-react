@@ -1,44 +1,110 @@
 import * as React from "react";
-import { ArgentinaDolarService } from "../services/ArgentinaDolarService";
-import { dolar } from "../domain/dolar";
-import { DolarComponent } from "../components/DolarComponent";
-import { Backdrop, CircularProgress } from "@material-ui/core";
-import { Typography } from "../components/Typography";
+import { Header } from "../components/Header";
+import { List } from "../components/List";
+import { ListItem } from "../components/ListItem";
+import { Dropdown } from "../components/Dropdown";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 
-export const UI: React.FC = () => {
-  const [loading, setLoading] = React.useState<boolean>(false);
+const UI : React.FC<RouteComponentProps> = (props) => {
 
-  const [dolars, setDolars] = React.useState<dolar[]>([]);
+  const [selected, setSelected] = React.useState<string>("");
 
-  React.useEffect(() => {
-    setLoading(true);
-    ArgentinaDolarService.getHome()
-      .then((home) => {
-        setDolars(home);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
+  const renderDolarMenuItem = () => {
     return (
-      <Backdrop open={true} >
-        <CircularProgress color="inherit" />
-      </Backdrop>
+      <ListItem>
+        <Dropdown
+          left
+          buttonText="Dólar"
+          name="1"
+          nameSelected={selected}
+          onClickMenu={() => {
+            setSelected("1");
+            props.history.push("/home");
+          }}
+          dropdownList={[]}
+        />
+      </ListItem>
     );
-  }
+  };
+
+  const renderDolarBlueMenuItem = () => {
+    return (
+      <ListItem>
+        <Dropdown
+          left
+          buttonText="Dólar blue"
+          name="2"
+          nameSelected={selected}
+          onClickMenu={() => {
+            setSelected("2");
+          }}
+          dropdownList={[]}
+        />
+      </ListItem>
+    );
+  };
+
+  const renderOtherCoinsMenuItem = () => {
+    return (
+      <ListItem>
+        <Dropdown
+          left
+          buttonText="Otras Monedas"
+          name="9"
+          nameSelected={selected}
+          onClickItem={(param: string) => {
+            setSelected("9");
+          }}
+          dropdownList={[
+            "Euro",
+            "Real Brasileño",
+            "Libra Esterlina",
+            "Peso Uruguayo",
+            "Pesp Chileno",
+          ]}
+        />
+      </ListItem>
+    );
+  };
+
+  const renderNewsMenuItem = () => {
+    return (
+      <ListItem>
+        <Dropdown
+          left
+          buttonText="Noticias"
+          name="10"
+          nameSelected={selected}
+          onClickItem={(param: string) => {
+            setSelected("10");
+            if(param === "Noticias del dólar") {
+              props.history.push("/news/dollar-news");
+            }
+          }}
+          dropdownList={[
+            "Noticias del dólar",
+            "Economia",
+            "Tecnología",
+            "Viajes y Turismo",
+            "Finanzas",
+          ]}
+        />
+      </ListItem>
+    );
+  };
 
   return (
-    <>
-    <div style={{textAlign: "center"}}>
-    <Typography>Precio del Dólar HOY en Argentina</Typography>
-    </div>
-    <div style={{display: "flex", flexWrap: "wrap"}}>
-      {dolars.map((value, index) => {
-        return <DolarComponent dolar={value} key={index} />;
-      })}
-      </div>
-    </>
+    <Header
+      tooltipText="Dolar App"
+      leftLinks={
+        <List>
+          {renderDolarMenuItem()}
+          {renderDolarBlueMenuItem()}
+          {renderOtherCoinsMenuItem()}
+          {renderNewsMenuItem()}
+        </List>
+      }
+    />
   );
 };
+export default withRouter(UI);
