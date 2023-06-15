@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
-import { UI } from "./views/UI";
+import { RoutesWrap } from "./routes/RoutesWrap";
 
-ReactDOM.render(<UI />, document.getElementById("root"));
+ReactDOM.render( <RoutesWrap /> , document.getElementById("root"));
 
 serviceWorker.unregister();
