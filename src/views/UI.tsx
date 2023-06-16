@@ -77,8 +77,8 @@ const UI : React.FC<RouteComponentProps> = (props) => {
           nameSelected={selected}
           onClickItem={(param: string) => {
             setSelected("10");
-            if(param === "Noticias del dólar") {
-              props.history.push("/news/dollar-news");
+            if(param === "Economia") {
+              props.history.push("/economy-news");
             }
           }}
           dropdownList={[
