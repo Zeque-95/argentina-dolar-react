@@ -1,24 +1,26 @@
 import * as React from "react";
+import Pagination from '@material-ui/lab/Pagination';
 import { EconomyNewsService } from "../services/EconomyNewsService";
 import { News } from "../domain/News";
 import { Backdrop, CircularProgress } from "@material-ui/core";
 import { NewsComponent } from "../components/NewsComponent";
 
 export const EconomyNewsPage: React.FC = () => {
+
   const [loading, setLoading] = React.useState<boolean>(false);
   const [news, setNews] = React.useState<News[]>([]);
+  const [page , setPage] = React.useState<number>(1);
 
   React.useEffect(() => {
     setLoading(true);
-    EconomyNewsService.getNews()
+    EconomyNewsService.getNewsPage(page) 
       .then((e) => {
-        console.log(e);
         setNews(e);
       })
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [page]); 
 
   if (loading) {
     return (
@@ -35,6 +37,15 @@ export const EconomyNewsPage: React.FC = () => {
           return <NewsComponent value={value} key={index} />;
         })}
       </div>
+      <Pagination 
+        style={{marginTop : "20px"}}
+        page={page}
+        count={19} 
+        color="secondary"
+        onChange={((event: React.ChangeEvent<unknown>, page: number)=>{
+          setPage(page);
+        })}
+      />
     </>
   );
 };
