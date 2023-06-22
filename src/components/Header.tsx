@@ -41,9 +41,10 @@ const useHeaderStyles = makeStyles(() => ({
     alignItems: "center",
     flexFlow: "row nowrap",
     justifyContent: "flex-start",
-    position: "static",
+    position: "sticky",
     zIndex: 1,
     height: "62px",
+    marginTop:"0",
   },
 }));
 
