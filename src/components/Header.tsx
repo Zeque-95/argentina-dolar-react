@@ -35,7 +35,7 @@ const useHeaderStyles = makeStyles(() => ({
     padding: "0.625rem 0",
     color: "#555",
     width: "100%",
-    backgroundColor: "#2dc455",
+    backgroundColor: "#3a5a40",
     boxShadow: "0px 15px 19px rgba(47, 65, 81, 0.04)",
     transition: "all 150ms ease 0s",
     alignItems: "center",

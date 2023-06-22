@@ -80,6 +80,18 @@ const UI : React.FC<RouteComponentProps> = (props) => {
             if(param === "Economia") {
               props.history.push("/economy-news");
             }
+            if(param === "Tecnología") {
+              props.history.push("/tecnology-news");
+            }
+            if(param === "Noticias del dólar") {
+              props.history.push("/dolar-news");
+            }
+            if(param === "Viajes y Turismo") {
+              props.history.push("/viajes-turismo-News");
+            }
+            if(param === "Finanzas") {
+              props.history.push("/Finanzas-News");
+            }
           }}
           dropdownList={[
             "Noticias del dólar",
